@@ -9,8 +9,8 @@ module.exports = {
         jakarta: ['Plus Jakarta Sans', 'sans-serif'],
       },
       colors: {
-        navy: '#1B3A5C',
-        gold: '#C9A84C',
+        navy: '#2E207A',
+        gold: '#F5C518',
         'clinical-white': '#FAFAFB',
         charcoal: '#1A1A1A',
         background: 'hsl(var(--background))',

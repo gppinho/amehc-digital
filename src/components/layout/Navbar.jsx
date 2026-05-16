@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LogIn } from "lucide-react";
+import AmehcLogo from "./AmehcLogo";
 
 const links = [
   { label: "Sobre", href: "/sobre" },
@@ -26,26 +27,20 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || !isHome
-          ? "bg-navy/95 backdrop-blur-[12px] shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-navy/97 backdrop-blur-[12px] shadow-lg py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
-            <span className="text-navy font-playfair font-bold text-sm">A</span>
-          </div>
-          <div>
-            <div className="font-playfair font-bold text-white text-lg leading-tight">AMEHC</div>
-            <div className="text-gold text-xs font-jakarta leading-tight hidden sm:block">Associação Médica</div>
-          </div>
+          <AmehcLogo size="md" />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -63,7 +58,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/area-do-associado"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-md border border-gold/60 text-gold text-sm font-jakarta font-medium hover:bg-gold hover:text-navy transition-all duration-200 animate-glow-pulse"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-md bg-gold text-navy text-sm font-jakarta font-bold hover:bg-gold/90 transition-all duration-200"
           >
             <LogIn size={15} />
             Área do Associado
@@ -79,9 +74,14 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Barra colorida (replica a barra do site original) */}
+      {(scrolled || !isHome) && (
+        <div className="h-1 w-full" style={{ background: "linear-gradient(to right, #2E207A, #F5C518, #2E207A)" }} />
+      )}
+
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-navy/98 backdrop-blur-md border-t border-white/10 px-6 py-4">
+        <div className="lg:hidden bg-navy backdrop-blur-md border-t border-white/10 px-6 py-4">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -95,7 +95,7 @@ export default function Navbar() {
           <Link
             to="/area-do-associado"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 flex items-center justify-center gap-2 w-full py-3 rounded-md bg-gold text-navy font-jakarta font-semibold text-sm"
+            className="mt-4 flex items-center justify-center gap-2 w-full py-3 rounded-md bg-gold text-navy font-jakarta font-bold text-sm"
           >
             <LogIn size={15} />
             Área do Associado

@@ -1,22 +1,17 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import AmehcLogo from "./AmehcLogo";
 
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="border-t-2 border-gold" />
+      <div className="h-1 w-full" style={{ background: "linear-gradient(to right, #2E207A, #F5C518, #2E207A)" }} />
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                <span className="text-navy font-playfair font-bold text-lg">A</span>
-              </div>
-              <div>
-                <div className="font-playfair font-bold text-white text-xl">AMEHC</div>
-                <div className="text-gold text-xs font-jakarta">Associação dos Médicos e Odontólogos</div>
-              </div>
+              <AmehcLogo size="lg" />
             </div>
             <p className="text-white/70 font-jakarta text-sm leading-relaxed max-w-sm">
               Representando e valorizando os profissionais de saúde do Hospital Conceição desde nossa fundação. Unidos pela excelência médica.
@@ -66,19 +61,19 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
                 <span className="font-jakarta text-sm text-white/70 leading-relaxed">
-                  Hospital Nossa Senhora da Conceição<br />Porto Alegre – RS
+                  Rua Francisco Trein, 596 – Térreo<br />Cristo Redentor – Porto Alegre / RS
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-gold shrink-0" />
-                <a href="tel:+555133570100" className="font-jakarta text-sm text-white/70 hover:text-gold transition-colors">
-                  (51) 3357-0100
+                <a href="tel:+555133612295" className="font-jakarta text-sm text-white/70 hover:text-gold transition-colors">
+                  (51) 3361-2295 / 3361-4585
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-gold shrink-0" />
-                <a href="mailto:contato@amehc.org.br" className="font-jakarta text-sm text-white/70 hover:text-gold transition-colors">
-                  contato@amehc.org.br
+                <a href="mailto:amehc@amehc.com.br" className="font-jakarta text-sm text-white/70 hover:text-gold transition-colors">
+                  amehc@amehc.com.br
                 </a>
               </li>
             </ul>
