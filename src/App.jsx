@@ -16,6 +16,7 @@ import AssocieSe from "@/pages/AssocieSe";
 import Contato from "@/pages/Contato";
 import AreaAssociado from "@/pages/AreaAssociado";
 import Login from "@/pages/Login";
+import PlanoExportacao from "@/pages/PlanoExportacao";
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -45,6 +46,7 @@ const AuthenticatedApp = () => {
         <Route path="/associe-se" element={<AssocieSe />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/area-do-associado" element={<AreaAssociado />} />
+        <Route path="/plano-exportacao" element={<PlanoExportacao />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Login />} />
